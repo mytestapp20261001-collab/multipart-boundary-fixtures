@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "slug": "multipart-boundary-fixtures",
+  "domain": "protocol",
+  "guidance_group": "medium",
+  "source_commit": "1286096c10a23bbb04aca83679ae3c31f3326030",
+  "source_repository": "mytestapp20261001-collab/mytest-engineering-toolbox",
+  "source_repository_id": 1411411288,
+  "source_path": "tools/multipart-boundary-fixtures",
+  "root_path": ".",
+  "publication_status": "prepared_only; coordinator verifies final repository identity and remote CI",
+  "expected_repository": "mytestapp20261001-collab/multipart-boundary-fixtures",
+  "repository_id": null,
+  "preserved_files": [
+    {
+      "path": "README.md",
+      "size_bytes": 4004,
+      "sha256": "1dbdf18f9df59cf136fbdd7e618ab30c2045abbb82676503d6765a01eb147551",
+      "git_blob_sha1": "59cba0c997c496639b47577b3b4a0a32db853663",
+      "utf8": true,
+      "source_path": "tools/multipart-boundary-fixtures/README.md"
+    },
+    {
+      "path": "SKILL.md",
+      "size_bytes": 844,
+      "sha256": "0ef2ff8a64d8013d3ccae4822f8f20d6dbf10f2a4d428a25d3a5da770735b355",
+      "git_blob_sha1": "660d07eae9ad8ba089ed5d413f25f940ef441451",
+      "utf8": true,
+      "source_path": "tools/multipart-boundary-fixtures/SKILL.md"
+    },
+    {
+      "path": "examples/bad.json",
+      "size_bytes": 135,
+      "sha256": "f46ed0ea964318b99d49e004b926ebc5952fbb545384780b28ad0a9af2bd1cda",
+      "git_blob_sha1": "5ce99fa1858e8825b05490e51e4923b75011d46b",
+      "utf8": true,
+      "source_path": "tools/multipart-boundary-fixtures/examples/bad.json"
+    },
+    {
+      "path": "examples/good.json",
+      "size_bytes": 106,
+      "sha256": "d4fa157bd3fd18ec65eb699d246166a4a0cadd7366d4d5c61eba75045e9f7d04",
+      "git_blob_sha1": "cf8437ef8736e5923de9b500f1f8092d387d23eb",
+      "utf8": true,
+      "source_path": "tools/multipart-boundary-fixtures/examples/good.json"
+    },
+    {
+      "path": "test_tool.py",
+      "size_bytes": 7113,
+      "sha256": "f345110b53aa81ba0cd0b8401d188e4f798364910856b7c4d96adffed7b9aed6",
+      "git_blob_sha1": "f4c3f3f98e2029f15eb884ed510cc4e14c990e09",
+      "utf8": true,
+      "source_path": "tools/multipart-boundary-fixtures/test_tool.py"
+    },
+    {
+      "path": "tool.py",
+      "size_bytes": 8679,
+      "sha256": "aa3d21d17bcbbbc8388425788478bd873229ccc14fa752f00afe970e3d0d03da",
+      "git_blob_sha1": "06ad198c09b3716670cad0a538e8053b422aa09c",
+      "utf8": true,
+      "source_path": "tools/multipart-boundary-fixtures/tool.py"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 1076,
+      "sha256": "dce76471613629e93f3f98b7aaa6f72ff9adb88204a3f83d3045952017ab2f46",
+      "git_blob_sha1": "677c4463d59b560db9c1fde1052eff6eefa6441a",
+      "utf8": true,
+      "source_path": "LICENSE"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 62,
+      "sha256": "e4d5aecc4cd36f593c2e7f3dad08b24261b13466b898004a445614058d29d8de",
+      "git_blob_sha1": "fe9f8fb619601213cbfef4f6eadb5d413d8f7f01",
+      "utf8": true,
+      "source_path": ".gitignore"
+    }
+  ],
+  "readme_checks": [
+    {
+      "label": "README example",
+      "args": [
+        "tool.py",
+        "--input",
+        "examples/good.json",
+        "--pretty"
+      ],
+      "expected_exit": 0,
+      "output": "json",
+      "documented_command": "python3 tool.py --input examples/good.json --pretty"
+    },
+    {
+      "label": "README example",
+      "args": [
+        "tool.py",
+        "--input",
+        "examples/bad.json",
+        "--pretty"
+      ],
+      "expected_exit": 1,
+      "output": "json",
+      "documented_command": "python3 tool.py --input examples/bad.json --pretty  # expected exit 1"
+    },
+    {
+      "label": "CLI help",
+      "args": [
+        "tool.py",
+        "--help"
+      ],
+      "expected_exit": 0,
+      "output": "help"
+    },
+    {
+      "label": "CLI missing input",
+      "args": [
+        "tool.py"
+      ],
+      "expected_exit": 2,
+      "output": "json"
+    },
+    {
+      "label": "CLI unknown argument",
+      "args": [
+        "tool.py",
+        "--unsupported-migration-test"
+      ],
+      "expected_exit": 2,
+      "output": "json"
+    }
+  ]
+}

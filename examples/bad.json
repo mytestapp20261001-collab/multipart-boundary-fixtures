@@ -1,0 +1,8 @@
+{
+  "mode": "synthesize",
+  "boundary": "fixture-2024",
+  "parts": [
+    "hello\r\n--fixture-2024-collision"
+  ],
+  "closing": false
+}
